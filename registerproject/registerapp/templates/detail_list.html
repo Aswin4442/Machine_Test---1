@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Details of the Users</h1>
+
+    <ul>
+        {% for image in images %}
+        <li>{{ image.Fullname }} - {{ image.Username }} - {{ image.email }} - {{ image.image }}
+            <a href="{{ image.image.url }}">View</a>
+            <a href="{% url 'dnld_img' image.pk %}">Download</a>
+        </li>
+        
+        {% endfor %}
+    </ul>
+</body>
+</html>
